@@ -7,7 +7,6 @@ export default class SearchBar extends Component {
 
     this.state = { term: '' };
 
-    // Any function other than render must be explicitly bound.
     this.onInputChange = this.onInputChange.bind(this);
   }
 
