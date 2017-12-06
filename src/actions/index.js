@@ -1,12 +1,16 @@
-# This is a public key
+import axios from 'axios';
+
+// This is a public key
 const API_KEY = 'b6907d289e10d714a6e88b30761fae22';
 
+const ROOT_URL = 'http://api.openweathermap.org/data/2.5/forecast';
+
 export function fetchWeather(city) {
-  const url = `${ROOT_URL}&q=${city},us`;
+  const url = `${ROOT_URL}?q=${city},us`;
   const request = axios.get(url);
 
   return {
-    type: FETCH_WEATHER;
-    payload: request;
+    type: FETCH_WEATHER,
+    payload: request
   }
 }
